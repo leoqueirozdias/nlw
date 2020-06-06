@@ -1,39 +1,39 @@
-{%%{% extends 'layout.html' %}%}
+{% extends 'layout.html' %}
 
-<title>Ecoleta</title>
+{% set pageId = 'page-home' %}
 
 {% block styles %}
     <link rel="stylesheet" href="/styles/home.css">
     <link rel="stylesheet" href="/styles/modal.css">
-
 {% endblock styles %}
 
-<link rel="stylesheet" href="/styles/responsive.css">
+{% block content %}
+    <div class="content">
+        <header>
+            <img src="/assets/logo.svg" alt="Logomarca">
+            <a href="/create-point">
+                <span></span>
+                Cadastre um ponto de coleta
+            </a>
 
-{# <div id="page-home"> #}
+        </header>
+        <main>
+            <h1>Seu marketplace de coleta de resíduos</h1>
 
-<div class="content">
-    <header>
-        <img src="/assets/logo.svg" alt="Logomarca">
-        <a href="/create-point">
-            <span></span>
-            Cadastre um ponto de coleta
-        </a>
+            <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
 
-    </header>
-    <main>
-        <h1>Seu marketplace de coleta de resíduos</h1>
+            <a href="#">
+                <span></span>
+                <strong>Pesquisar pontos de coleta</strong>
+            </a>
+        </main>
+    </div>
+{% endblock content %}
 
-        <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
+{% block modal %}
+    {% include 'partials/modal.html' %}
+{% endblock modal %}
 
-        <a href="#">
-            <span></span>
-            <strong>Pesquisar pontos de coleta</strong>
-        </a>
-    </main>
-</div>
-</div>
-
-{% include 'partials/modal.html' %}
-
-<script src="/scripts/index.js"></script>
+{% block scripts %}
+    <script src="/scripts/index.js"></script>
+{% endblock scripts %}
